@@ -1,23 +1,18 @@
 local prefs = import("LrPrefs").prefsForPlugin()
 local LrView = import("LrView")
-
 local Updates = require("Updates")
-
 local bind = LrView.bind
-
 local Info = {}
-
 function Info.sectionsForTopOfDialog(f, _)
 	if prefs.checkForUpdates == nil then
 		prefs.checkForUpdates = true
 	end
 	local settings = {
-		title = "Plugin options",
+		title = LOC("$$$/iNat/Info/PluginOptions=Plugin options"),
 		bind_to_object = prefs,
-
 		f:row({
 			f:static_text({
-				title = "Automatically check for updates",
+				title = LOC("$$$/iNat/Info/AutoCheckUpdates=Automatically check for updates"),
 				alignment = "right",
 				width = LrView.share("inaturalistPrefsLabel"),
 			}),
@@ -26,36 +21,32 @@ function Info.sectionsForTopOfDialog(f, _)
 				alignment = "left",
 			}),
 		}),
-
 		f:row({
 			f:static_text({
-				title = "Check for updates now",
+				title = LOC("$$$/iNat/Info/CheckUpdatesNow=Check for updates now"),
 				alignment = "right",
 				width = LrView.share("inaturalistPrefsLabel"),
 			}),
 			f:push_button({
-				title = "Go",
+				title = LOC("$$$/iNat/Info/Go=Go"),
 				action = Updates.forceUpdate,
 			}),
 		}),
-
 		f:row({
 			f:static_text({
-				title = "Log level",
+				title = LOC("$$$/iNat/Info/LogLevel=Log level"),
 				alignment = "right",
 				width = LrView.share("inaturalistPrefsLabel"),
 			}),
 			f:popup_menu({
 				value = bind("logLevel"),
 				items = {
-					{ title = "None", value = nil },
-					{ title = "Trace", value = "trace" },
+					{ title = LOC("$$$/iNat/Info/LogNone=None"), value = nil },
+					{ title = LOC("$$$/iNat/Info/LogTrace=Trace"), value = "trace" },
 				},
 			}),
 		}),
 	}
-
 	return { settings }
 end
-
 return Info
