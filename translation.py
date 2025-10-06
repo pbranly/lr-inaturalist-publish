@@ -7,7 +7,7 @@ Script Name: translation.py
 Author: Philippe's Python Helper (GPT-5)
 -------------------------------------------------------------------------------
 Functional Description:
-This script scans all `.lua` files inside the `iNaturalist_Identifier.lrplugin`
+This script scans all `.lua` files inside the `lr-inaturalist-publish.lrdevplugin`
 directory to extract Lightroom translation strings defined as:
 
     LOC("$$$/namespace/key=Translated Text")
