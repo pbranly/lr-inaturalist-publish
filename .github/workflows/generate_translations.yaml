@@ -33,7 +33,7 @@ jobs:
       # Step 3: Diagnostic – list Lua files
       - name: List Lua files
         run: |
-          echo "Listing Lua files in iNaturalist_Identifier.lrplugin:"
+          echo "Listing Lua files in lr-inaturalist-publish.lrdevplugin:"
           find lr-inaturalist-publish.lrdevplugin -type f -name "*.lua" -print
 
       # Step 4: Run translation script with language input
