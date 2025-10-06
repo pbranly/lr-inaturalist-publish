@@ -31,7 +31,7 @@ Features:
 - Removes duplicates (marks repeated entries as comments).
 - Auto-installs `deep-translator` if missing.
 - Translates extracted English strings using Google Translate.
-- Saves translations per language into `iNaturalist_Identifier.lrplugin`.
+- Saves translations per language into `lr-inaturalist-publish.lrdevplugin`.
 
 -------------------------------------------------------------------------------
 """
@@ -149,7 +149,7 @@ def process_lua_files(plugin_dir, output_langs):
 
 def main():
     # Determine plugin directory (fixed)
-    plugin_dir = os.path.join(os.getcwd(), "iNaturalist_Identifier.lrplugin")
+    plugin_dir = os.path.join(os.getcwd(), "lr-inaturalist-publish.lrdevplugin")
 
     # Parse language arguments
     langs = [arg.lower() for arg in sys.argv[1:]]
