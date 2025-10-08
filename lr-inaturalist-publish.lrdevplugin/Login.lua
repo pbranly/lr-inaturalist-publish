@@ -3,13 +3,17 @@ local LrDialogs = import("LrDialogs")
 local LrHttp = import("LrHttp")
 local LrPasswords = import("LrPasswords")
 local LrTasks = import("LrTasks")
+
 local INaturalistAPI = require("INaturalistAPI")
 local Random = require("Random")
 local json = require("dkjson")
 local sha2 = require("sha2")
+
 local Login = {}
+
 function Login.verifyLogin(propertyTable)
 	logger:trace("Login.verifyLogin()")
+
 	if propertyTable.login and #propertyTable.login > 0 and LrPasswords.retrieve(propertyTable.login) then
 		propertyTable.accountStatus = LOC("$$$/iNat/Login/LoggedInAs=Logged in as ^1", propertyTable.login)
 		propertyTable.loginButtonEnabled = false
@@ -20,6 +24,7 @@ function Login.verifyLogin(propertyTable)
 		propertyTable.LR_cantExportBecause = LOC("$$$/iNat/Login/NotLoggedInToiNaturalist=Not logged in to iNaturalist")
 	end
 end
+
 local function base64urlencode(s)
 	s = sha2.bin_to_base64(s)
 	s = string.gsub(s, "=", "")
@@ -27,14 +32,18 @@ local function base64urlencode(s)
 	s = string.gsub(s, "/", "_")
 	return s
 end
+
 local function generateSecret()
 	return base64urlencode(Random.rand256())
 end
+
 function Login.login(propertyTable)
 	logger:trace("Login.login()")
+
 	local baseUrl = "https://www.inaturalist.org/oauth/authorize"
 	local challenge = generateSecret()
 	local code_challenge = base64urlencode(sha2.hex_to_bin(sha2.sha256(challenge)))
+
 	local url = string.format(
 		"%s?client_id=%s&code_challenge=%s&code_challenge_method=S256&redirect_uri=%s&response_type=code",
 		baseUrl,
@@ -46,12 +55,14 @@ function Login.login(propertyTable)
 	Login.inProgressLogin = propertyTable
 	LrHttp.openUrlInBrowser(url)
 end
+
 function Login.handleAuthRedirect(url)
 	logger:trace("handleAuthRedirect()")
 	local params = {}
 	for k, v in url:gmatch("([^&=?]-)=([^&=?]+)") do
 		params[k] = v
 	end
+
 	if params["code"] then
 		local propertyTable = Login.inProgressLogin
 		if not (propertyTable and propertyTable.pkceChallenge) then
@@ -73,6 +84,7 @@ function Login.handleAuthRedirect(url)
 		end)
 	end
 end
+
 -- Obtain an OAuth access token (second stage of OAuth)
 function Login.getToken(code, challenge)
 	logger:trace("getToken()")
@@ -97,4 +109,5 @@ function Login.getToken(code, challenge)
 	data = json.decode(data)
 	return data.access_token
 end
+
 return Login
