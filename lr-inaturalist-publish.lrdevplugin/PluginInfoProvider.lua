@@ -14,7 +14,7 @@ function Info.sectionsForTopOfDialog(f, _)
 	local settings = {
 		title = LOC("$$$/iNat/Info/PluginOptions=Plugin options"),
 		bind_to_object = prefs,
-		
+
 		f:row({
 			f:static_text({
 				title = LOC("$$$/iNat/Info/AutoCheckUpdates=Automatically check for updates"),
@@ -26,7 +26,7 @@ function Info.sectionsForTopOfDialog(f, _)
 				alignment = "left",
 			}),
 		}),
-		
+
 		f:row({
 			f:static_text({
 				title = LOC("$$$/iNat/Info/CheckUpdatesNow=Check for updates now"),
@@ -38,7 +38,7 @@ function Info.sectionsForTopOfDialog(f, _)
 				action = Updates.forceUpdate,
 			}),
 		}),
-		
+
 		f:row({
 			f:static_text({
 				title = LOC("$$$/iNat/Info/LogLevel=Log level"),
@@ -54,7 +54,7 @@ function Info.sectionsForTopOfDialog(f, _)
 			}),
 		}),
 	}
-	
+
 	return { settings }
 end
 
