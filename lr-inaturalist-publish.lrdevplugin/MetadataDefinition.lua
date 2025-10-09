@@ -1,4 +1,5 @@
 local MetadataConst = require("MetadataConst")
+
 return {
 	metadataFieldsForPhotos = {
 		{
@@ -51,5 +52,6 @@ return {
 			browsable = false,
 		},
 	},
+	
 	schemaVersion = 1,
 }
