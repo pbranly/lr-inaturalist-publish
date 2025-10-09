@@ -52,6 +52,6 @@ return {
 			browsable = false,
 		},
 	},
-	
+
 	schemaVersion = 1,
 }
