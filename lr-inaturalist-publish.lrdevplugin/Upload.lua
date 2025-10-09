@@ -233,4 +233,5 @@ function Upload.deletePhotosFromPublishedCollection(publishSettings, photoIds, d
 		deletedCallback(photoId)
 	end
 end
+
 return Upload
