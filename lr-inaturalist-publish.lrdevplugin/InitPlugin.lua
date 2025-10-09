@@ -15,6 +15,6 @@ LrTasks.startAsyncTask(function()
 	prefs:addObserver("logLevel", configureLogging)
 	configureLogging(prefs, "logLevel", prefs.logLevel)
 	logger:trace("--------------- Starting iNaturalist Publish Service Plugin")
-		
+
 	require("Updates").check(false)
 end)
