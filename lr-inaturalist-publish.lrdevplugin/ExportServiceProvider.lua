@@ -480,8 +480,10 @@ function exportServiceProvider.didCreateNewPublishService(publishSettings, info)
 	local f = LrView.osFactory()
 	local mainMsg = LOC("$$$/iNat/Export/ThisWillTakeTime=This will take some time.")
 	if publishSettings.syncOnPublish then
-		mainMsg = LOC("$$$/iNat/Export/ThisWillTakeTimeAuto=This will take some time. If you do not do " ..
-			"this now it will happen automatically the first time you publish using this plugin.")
+		mainMsg = LOC(
+			"$$$/iNat/Export/ThisWillTakeTimeAuto=This will take some time. If you do not do "
+				.. "this now it will happen automatically the first time you publish using this plugin."
+		)
 	end
 	local c = {
 		spacing = f:dialog_spacing(),
@@ -492,6 +494,7 @@ function exportServiceProvider.didCreateNewPublishService(publishSettings, info)
 			height_in_lines = 2,
 		}),
 	}
+
 	if publishSettings.syncSearchIn == -1 then
 		local noCollectionMsg = "$$$/iNat/Export/NoCollectionSet=You have not set a collection to which to limit "
 			.. "the search for matching photos. This may result in a low number of matches."
