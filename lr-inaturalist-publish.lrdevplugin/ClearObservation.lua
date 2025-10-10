@@ -10,7 +10,8 @@ local function clearObservation()
 
 	local confirmation = LrDialogs.confirm(
 		LOC("$$$/iNat/Clear/DeleteObservationData=Delete the observation data from ^1 photos?", #photos),
-		LOC("$$$/iNat/Clear/ClearMetadataFields=This will clear the observation UUID and URL metadata fields from these photos")
+		LOC("$$$/iNat/Clear/ClearMetadataFields=This will clear the observation UUID and URL metadata fields " ..
+			"from these photos")
 	)
 
 	if confirmation == "cancel" then
