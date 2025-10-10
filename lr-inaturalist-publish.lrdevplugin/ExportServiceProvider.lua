@@ -493,9 +493,10 @@ function exportServiceProvider.didCreateNewPublishService(publishSettings, info)
 		}),
 	}
 	if publishSettings.syncSearchIn == -1 then
+		local noCollectionMsg = "$$$/iNat/Export/NoCollectionSet=You have not set a collection to which to limit " ..
+			"the search for matching photos. This may result in a low number of matches."
 		c[#c + 1] = f:static_text({
-			title = LOC("$$$/iNat/Export/NoCollectionSet=You have not set a collection to which to limit " ..
-				"the search for matching photos. This may result in a low number of matches."),
+			title = LOC(noCollectionMsg),
 			fill_horizontal = 1,
 			width_in_chars = 50,
 			height_in_lines = 2,
