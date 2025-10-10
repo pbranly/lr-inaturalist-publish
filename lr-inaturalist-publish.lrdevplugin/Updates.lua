@@ -108,7 +108,8 @@ local function showUpdateDialog(release, force)
 		prefs.lastUpdateOffered = release.tag_name
 	end
 
-	local info = LOC("$$$/iNat/Updates/UpdateAvailable=An update is available for the iNaturalist Publish Plugin. Would you like to download it now?")
+	local info = LOC("$$$/iNat/Updates/UpdateAvailable=An update is available for the iNaturalist " ..
+		"Publish Plugin. Would you like to download it now?")
 	if release.body and #release.body > 0 then
 		info = info .. "\n\n" .. release.body
 	end
@@ -136,7 +137,8 @@ local function showUpdateDialog(release, force)
 
 		if LrTasks.execute("tar --help") == 0 then
 			LrFunctionContext.callWithContext("downloadAndInstall", downloadAndInstall, release)
-			LrDialogs.message(LOC("$$$/iNat/Updates/UpdateInstalledTitle=iNaturalist Publish Plugin update installed"), LOC("$$$/iNat/Updates/PleaseRestartLightroom=Please restart Lightroom"), "info")
+			LrDialogs.message(LOC("$$$/iNat/Updates/UpdateInstalledTitle=iNaturalist Publish Plugin " ..
+				"update installed"), LOC("$$$/iNat/Updates/PleaseRestartLightroom=Please restart Lightroom"), "info")
 		else
 			-- We need the user to download and extract the zip file
 			LrHttp.openUrlInBrowser(release.assets[1].browser_download_url)
