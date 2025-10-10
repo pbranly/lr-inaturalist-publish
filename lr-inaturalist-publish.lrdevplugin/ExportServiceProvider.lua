@@ -494,7 +494,7 @@ function exportServiceProvider.didCreateNewPublishService(publishSettings, info)
 	}
 	if publishSettings.syncSearchIn == -1 then
 		local noCollectionMsg = "$$$/iNat/Export/NoCollectionSet=You have not set a collection to which to limit "
-		.. "the search for matching photos. This may result in a low number of matches."
+			.. "the search for matching photos. This may result in a low number of matches."
 
 		c[#c + 1] = f:static_text({
 			title = LOC(noCollectionMsg),
@@ -503,6 +503,7 @@ function exportServiceProvider.didCreateNewPublishService(publishSettings, info)
 			height_in_lines = 2,
 		})
 	end
+
 	local r = LrDialogs.presentModalDialog({
 		title = LOC("$$$/iNat/Export/PerformSyncNow=Perform synchronization from iNaturalist now?"),
 		contents = f:column(c),
