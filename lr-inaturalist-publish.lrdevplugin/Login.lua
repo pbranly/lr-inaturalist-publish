@@ -68,7 +68,8 @@ function Login.handleAuthRedirect(url)
 		if not (propertyTable and propertyTable.pkceChallenge) then
 			LrDialogs.message(
 				LOC("$$$/iNat/Login/UnexpectedLogin=Unexpected iNaturalist login received"),
-				LOC("$$$/iNat/Login/NoLoginInProgress=No login is in progress. Leave the publishing manager open while authorizing with iNaturalist in your browser.")
+				LOC("$$$/iNat/Login/NoLoginInProgress=No login is in progress. Leave the publishing " ..
+					"manager open while authorizing with iNaturalist in your browser.")
 			)
 			return
 		end
