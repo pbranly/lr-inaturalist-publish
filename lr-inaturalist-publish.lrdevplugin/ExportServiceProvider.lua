@@ -276,18 +276,15 @@ function exportServiceProvider.sectionsForTopOfDialog(f, propertyTable)
 						local r
 						if propertyTable.syncKeywordsCommon then
 							r = LOC(
-								"$$$/iNat/Export/SyncSynonymScientific=Set scientific name as a keyword "
-									.. "synonym"
+								"$$/iNat/Export/SyncSynonymScientific=Set scientific name as a keyword " .. "synonym"
 							)
 						else
-							r = LOC(
-								"$$$/iNat/Export/SyncSynonymCommon=Set common name as a keyword synonym"
-							)
+							r = LOC("$$/iNat/Export/SyncSynonymCommon=Set common name as a keyword synonym")
 						end
 						r = r
 							.. "\n"
 							.. LOC(
-								"$$$/iNat/Export/SyncSynonymNote=Keyword synonyms are always exported "
+								"$$/iNat/Export/SyncSynonymNote=Keyword synonyms are always exported "
 									.. '(see "Help...")'
 							)
 						return r
@@ -305,9 +302,7 @@ function exportServiceProvider.sectionsForTopOfDialog(f, propertyTable)
 		f:row({
 			spacing = f:control_spacing(),
 			f:static_text({
-				title = LOC(
-					'$$$/iNat/Export/SyncIncludeOnExportLabel=Set "Include on Export" attribute on keywords'
-				),
+				title = LOC('$$/iNat/Export/SyncIncludeOnExportLabel=Set "Include on Export" attribute on keywords'),
 				alignment = "right",
 				width = LrView.share("inaturalistSyncLabel"),
 				enabled = bind("syncKeywords"),
