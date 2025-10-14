@@ -148,8 +148,8 @@ function exportServiceProvider.sectionsForTopOfDialog(f, propertyTable)
 						end
 						return LOC(
 							"$$$/iNat/Export/SpeciesGuessInfo=Set species guess from keywords within "
-								.. "\"^1\" keyword\n(The setting for which keyword is in the "
-								.. "\"Synchronization\" section)",
+								.. '"^1" keyword\n(The setting for which keyword is in the '
+								.. '"Synchronization" section)',
 							value
 						)
 					end,
@@ -216,18 +216,14 @@ function exportServiceProvider.sectionsForTopOfDialog(f, propertyTable)
 				alignment = "right",
 				text_color = import("LrColor")(0, 0, 1),
 				mouse_down = function()
-					LrHttp.openUrlInBrowser(
-						"https://github.com/rcloran/lr-inaturalist-publish/wiki/Synchronization"
-					)
+					LrHttp.openUrlInBrowser("https://github.com/rcloran/lr-inaturalist-publish/wiki/Synchronization")
 				end,
 			}),
 		}),
 		f:row({
 			spacing = f:control_spacing(),
 			f:static_text({
-				title = LOC(
-					"$$$/iNat/Export/SyncSearchLabel=Only search for photos to sync from iNaturalist in"
-				),
+				title = LOC("$$$/iNat/Export/SyncSearchLabel=Only search for photos to sync from iNaturalist in"),
 				alignment = "right",
 				width = LrView.share("inaturalistSyncLabel"),
 			}),
@@ -239,9 +235,7 @@ function exportServiceProvider.sectionsForTopOfDialog(f, propertyTable)
 		f:row({
 			spacing = f:control_spacing(),
 			f:static_text({
-				title = LOC(
-					"$$$/iNat/Export/SyncOnPublishLabel=Synchronize from iNaturalist during every publish"
-				),
+				title = LOC("$$$/iNat/Export/SyncOnPublishLabel=Synchronize from iNaturalist during every publish"),
 				alignment = "right",
 				width = LrView.share("inaturalistSyncLabel"),
 			}),
@@ -294,7 +288,7 @@ function exportServiceProvider.sectionsForTopOfDialog(f, propertyTable)
 							.. "\n"
 							.. LOC(
 								"$$$/iNat/Export/SyncSynonymNote=Keyword synonyms are always exported "
-									.. "(see \"Help...\")"
+									.. '(see "Help...")'
 							)
 						return r
 					end,
@@ -312,7 +306,7 @@ function exportServiceProvider.sectionsForTopOfDialog(f, propertyTable)
 			spacing = f:control_spacing(),
 			f:static_text({
 				title = LOC(
-					"$$$/iNat/Export/SyncIncludeOnExportLabel=Set \"Include on Export\" attribute on keywords"
+					'$$$/iNat/Export/SyncIncludeOnExportLabel=Set "Include on Export" attribute on keywords'
 				),
 				alignment = "right",
 				width = LrView.share("inaturalistSyncLabel"),
@@ -436,10 +430,7 @@ local function checkSettings(settings)
 	local suggestions = {}
 
 	if not settings.LR_size_doNotEnlarge then
-		table.insert(
-			suggestions,
-			LOC("$$$/iNat/Export/SuggestionDoNotEnlarge= - Select \"Don't Enlarge\"")
-		)
+		table.insert(suggestions, LOC('$$$/iNat/Export/SuggestionDoNotEnlarge= - Select "Don\'t Enlarge"'))
 	end
 
 	local t = settings.LR_size_resizeType
@@ -453,7 +444,7 @@ local function checkSettings(settings)
 		if longEdge > 2048 then
 			table.insert(
 				suggestions,
-				LOC("$$$/iNat/Export/SuggestionUseLongEdge= - Consider using \"Long Edge\" instead")
+				LOC('$$$/iNat/Export/SuggestionUseLongEdge= - Consider using "Long Edge" instead')
 			)
 			table.insert(
 				suggestions,
@@ -464,16 +455,13 @@ local function checkSettings(settings)
 		if settings.LR_size_maxHeight > 2048 then
 			table.insert(
 				suggestions,
-				LOC(
-					"$$$/iNat/Export/SuggestionReduceLongEdge= - Reduce long edge size to 2048 pixels or "
-						.. "fewer"
-				)
+				LOC("$$$/iNat/Export/SuggestionReduceLongEdge= - Reduce long edge size to 2048 pixels or " .. "fewer")
 			)
 		end
 	elseif t == "shortEdge" then
 		table.insert(
 			suggestions,
-			LOC("$$$/iNat/Export/SuggestionLongEdgeInstead= - Use \"Long Edge\" instead of \"Short Edge\"")
+			LOC('$$$/iNat/Export/SuggestionLongEdgeInstead= - Use "Long Edge" instead of "Short Edge"')
 		)
 		if settings.LR_size_maxHeight > 2048 then
 			table.insert(
@@ -484,27 +472,21 @@ local function checkSettings(settings)
 	elseif t == "megapixels" then
 		table.insert(
 			suggestions,
-			LOC(
-				"$$$/iNat/Export/SuggestionLongEdgeNotMP= - Use \"Long Edge\" instead of \"Megapixels\""
-			)
+			LOC('$$$/iNat/Export/SuggestionLongEdgeNotMP= - Use "Long Edge" instead of "Megapixels"')
 		)
 		-- 2048px*2048px = 4.194304 MP
 		if settings.LR_size_megapixels > 4.2 then
 			table.insert(
 				suggestions,
 				LOC(
-					"$$$/iNat/Export/SuggestionLimitMP= - If you need to use \"Megapixels\", limit to less "
-						.. "than 4.2"
+					'$$$/iNat/Export/SuggestionLimitMP= - If you need to use "Megapixels", limit to less ' .. "than 4.2"
 				)
 			)
 		end
 	elseif t == "percentage" then
 		table.insert(
 			suggestions,
-			LOC(
-				"$$$/iNat/Export/SuggestionLongEdgeNotPercent= - Use \"Long Edge\" instead of "
-					.. "\"Percentage\""
-			)
+			LOC('$$$/iNat/Export/SuggestionLongEdgeNotPercent= - Use "Long Edge" instead of ' .. '"Percentage"')
 		)
 	end
 
@@ -516,7 +498,7 @@ local function checkSettings(settings)
 		"$$$/iNat/Export/SizingWarningIntro=iNaturalist limits image uploads to 2048 pixels on the long "
 			.. "side. The size settings you have chosen may result in larger images, so uploads could take "
 			.. "a longer time than needed, and waste server resources on iNaturalist.\n\nSuggestions in "
-			.. "\"Image Sizing\" section of settings:\n\n"
+			.. '"Image Sizing" section of settings:\n\n'
 	)
 
 	local trailer = LOC(
