@@ -14,7 +14,6 @@ local function clearObservation()
         "This will clear the observation UUID and URL metadata fields from these photos")
 )
 
-
 	if confirmation == "cancel" then
 		return
 	end
@@ -32,5 +31,4 @@ local function clearObservation()
 	end)
 end
 
-LrDialogs.showBezel(msg)
-
+import("LrTasks").startAsyncTask(clearObservation)
