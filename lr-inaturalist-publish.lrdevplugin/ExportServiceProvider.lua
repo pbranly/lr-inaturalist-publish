@@ -276,10 +276,8 @@ function exportServiceProvider.sectionsForTopOfDialog(f, propertyTable)
 						local r
 						if propertyTable.syncKeywordsCommon then
 							r = LOC(
-								"$$/iNat/Export/SyncSynonymScientific=Set scientific name as a keyword " .. "synonym"
+								"$$/iNat/Export/SyncSynonymScientific=Set scientific name as a keyword synonym"
 							)
-						else
-							r = LOC("$$/iNat/Export/SyncSynonymCommon=Set common name as a keyword synonym")
 						end
 						r = r
 							.. "\n"
@@ -450,7 +448,7 @@ local function checkSettings(settings)
 		if settings.LR_size_maxHeight > 2048 then
 			table.insert(
 				suggestions,
-				LOC("$$$/iNat/Export/SuggestionReduceLongEdge= - Reduce long edge size to 2048 pixels or " .. "fewer")
+				LOC("$$$/iNat/Export/SuggestionReduceLongEdge= - Reduce long edge size to 2048 pixels or fewer")
 			)
 		end
 	elseif t == "shortEdge" then
@@ -474,14 +472,14 @@ local function checkSettings(settings)
 			table.insert(
 				suggestions,
 				LOC(
-					'$$$/iNat/Export/SuggestionLimitMP= - If you need to use "Megapixels", limit to less ' .. "than 4.2"
+					'$$$/iNat/Export/SuggestionLimitMP= - If you need to use "Megapixels", limit to less than 4.2"
 				)
 			)
 		end
 	elseif t == "percentage" then
 		table.insert(
 			suggestions,
-			LOC('$$$/iNat/Export/SuggestionLongEdgeNotPercent= - Use "Long Edge" instead of ' .. '"Percentage"')
+			LOC('$$$/iNat/Export/SuggestionLongEdgeNotPercent= - Use "Long Edge" instead of "Percentage"')
 		)
 	end
 
