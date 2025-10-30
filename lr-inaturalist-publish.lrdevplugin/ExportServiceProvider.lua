@@ -472,7 +472,7 @@ local function checkSettings(settings)
 			table.insert(
 				suggestions,
 				LOC(
-					'$$$/iNat/Export/SuggestionLimitMP= - If you need to use "Megapixels", limit to less than 4.2"
+					'$$$/iNat/Export/SuggestionLimitMP= - If you need to use "Megapixels", limit to less than 4.2'
 				)
 			)
 		end
