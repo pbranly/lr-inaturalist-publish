@@ -275,9 +275,7 @@ function exportServiceProvider.sectionsForTopOfDialog(f, propertyTable)
 					transform = function()
 						local r
 						if propertyTable.syncKeywordsCommon then
-							r = LOC(
-								"$$/iNat/Export/SyncSynonymScientific=Set scientific name as a keyword synonym"
-							)
+							r = LOC("$$/iNat/Export/SyncSynonymScientific=Set scientific name as a keyword synonym")
 						end
 						r = r
 							.. "\n"
@@ -471,9 +469,7 @@ local function checkSettings(settings)
 		if settings.LR_size_megapixels > 4.2 then
 			table.insert(
 				suggestions,
-				LOC(
-					'$$$/iNat/Export/SuggestionLimitMP= - If you need to use "Megapixels", limit to less than 4.2'
-				)
+				LOC('$$$/iNat/Export/SuggestionLimitMP= - If you need to use "Megapixels", limit to less than 4.2')
 			)
 		end
 	elseif t == "percentage" then
