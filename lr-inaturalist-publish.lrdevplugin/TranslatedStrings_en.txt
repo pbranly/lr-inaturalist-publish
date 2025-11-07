@@ -1,6 +1,6 @@
 # ClearObservation.lua
 "$$$/iNat/Clear/DeleteObservationData=Delete the observation data from {1} photos?"
-"$$$/iNat/Clear/ClearFieldsInfo=This will clear the observation UUID and URL metadata"
+"$$$/iNat/Clear/ClearFieldsInfo=This will clear the observation UUID and URL metadata fields from these photos"
 "$$$/iNat/Clear/RemovedMetadataPlural=Removed observation metadata from {1} photos"
 "$$$/iNat/Clear/RemovedMetadataSingular=Removed observation metadata from {1} photo"
 
@@ -22,7 +22,7 @@
 "$$$/iNat/Export/SyncOnPublishLabel=Synchronize from iNaturalist during every publish"
 "$$$/iNat/Export/SyncKeywordsLabel=Update keywords from iNaturalist data"
 "$$$/iNat/Export/SyncCommonNamesLabel=Use common names for keywords"
-"$$$/iNat/Export/SyncKeywordsRootLabel=Put keywords within this keyword: Note: If this"
+"$$$/iNat/Export/SyncKeywordsRootLabel=Put keywords within this keyword:\n\nNote: If this"
 "$$$/iNat/Export/SyncTitleLabel=Set title to observation identification"
 "$$$/iNat/Export/FullSyncLabel=Synchronize everything from iNaturalist, even if it might"
 "$$$/iNat/Export/FullSyncButton=Full synchronization now"
@@ -33,12 +33,12 @@
 "$$$/iNat/Export/SuggestionReduceSize=- Reduce image size to 2048 pixels or fewer"
 "$$$/iNat/Export/SuggestionReduceLongEdge=- Reduce long edge size to 2048 pixels or fewer"
 "$$$/iNat/Export/SuggestionReduceEdge=- Reduce edge size to 2048 pixels or fewer"
-"$$$/iNat/Export/SizingWarningIntro=iNaturalist limits image uploads to 2048 pixels on the long"
-"$$$/iNat/Export/SizingWarningTrailer=Please open publish service settings again to edit the"
+"$$$/iNat/Export/SizingWarningIntro=iNaturalist limits image uploads to 2048 pixels on the long side. The size settings you have chosen may result in larger images, so uploads could take a longer time than needed, and waste server resources on iNaturalist.\n\nSuggestions in"
+"$$$/iNat/Export/SizingWarningTrailer=Please open publish service settings again to edit the image sizing settings."
 "$$$/iNat/Export/SizingWarningTitle=Image sizing too large"
 "$$$/iNat/Export/SyncWillTakeTime=This will take some time."
-"$$$/iNat/Export/SyncWillTakeTimeAuto=This will take some time. If you do not do this now it"
-"$$$/iNat/Export/NoCollectionWarning=You have not set a collection to which to limit the"
+"$$$/iNat/Export/SyncWillTakeTimeAuto=This will take some time. If you do not do this now it will happen automatically the first time you publish using this plugin."
+"$$$/iNat/Export/NoCollectionWarning=You have not set a collection to which to limit the search for matching photos. This may result in a low number of matches."
 "$$$/iNat/Export/PerformSyncNowTitle=Perform synchronization from iNaturalist now?"
 
 # GroupObservation.lua
@@ -84,24 +84,16 @@
 "$$$/iNat/Sync/SyncTitle=Synchronizing from iNaturalist"
 # DUPLICATE: "$$$/iNat/Sync/SyncTitle=Synchronizing from iNaturalist"
 "$$$/iNat/Sync/PluginName=iNaturalist Publish Service Provider"
-"$$$/iNat/Sync/CompleteMessage={1} observations were matched to {2} photos, and metadata was"
+"$$$/iNat/Sync/CompleteMessage={1} observations were matched to {2} photos, and metadata was set.\n\n{3} photos were matched to a specific photo in an observation, and were added to the Observations collection"
 "$$$/iNat/Sync/CompleteTitle=Synchronization complete"
 
 # Updates.lua
 "$$$/iNat/Updates/CannotWriteFile=Cannot write to download file"
 "$$$/iNat/Updates/CannotExtract=Could not extract downloaded release file"
 "$$$/iNat/Updates/CannotCreateDir=Cannot create temporary directory"
-"$$$/iNat/Updates/UpdateAvailableInfo=An update is available for the iNaturalist Publish Plugin."
+"$$$/iNat/Updates/UpdateAvailableInfo=An update is available for the iNaturalist Publish Plugin. Would you like to download it now?"
 "$$$/iNat/Updates/UpdateAvailableTitle=iNaturalist Publish Plugin update available"
 "$$$/iNat/Updates/DownloadButton=Download"
 "$$$/iNat/Updates/IgnoreButton=Ignore"
 "$$$/iNat/Updates/UpdateInstalledTitle=iNaturalist Publish Plugin update installed"
-"$$$/iNat/Updates/UpdateInstalledInfo=Please restart Lightroom"
-"$$$/iNat/Updates/NoUpdatesTitle=No updates available"
-"$$$/iNat/Updates/NoUpdatesInfo=You have the most recent version of the iNaturalist"
-
-# Upload.lua
-"$$$/iNat/Upload/DeleteOldPhotoError=There was a problem deleting the old version of photo {1}."
-"$$$/iNat/Upload/DeleteOldPhotoTitle=Error while updating photo"
-"$$$/iNat/Upload/SyncingObservations=Synchronizing observations from iNaturalist"
-"$$$/iNat/Upload/PublishingPhotos=Publishing {1} photos to iNaturalist"
+"$$$/iNa
